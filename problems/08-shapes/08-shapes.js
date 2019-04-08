@@ -21,5 +21,67 @@ Example for printShape("Diamond", 5, "*");
   * 
 */
 function printShape(shape, height, character) {
-  
+  switch (shape) {
+
+
+      case 'Square':
+      drawSquare (height, character);
+      
+      break;
+
+      case 'Triangle':
+      drawTriangle( height, character);
+      
+      break;
+
+      case 'Diamond':
+      drawDiamond( height, character);
+      
+      break;
+
+    default:
+      break;
+  }
 }
+
+function drawSquare (height, character)
+{
+  let result = "";
+  for(let y = 0; y < height; y++)
+  {
+    for(let x = 0; x < height; x++)
+    { 
+        result = result + character;
+    }
+    result = result + '\n';
+  } 
+  return result;
+}
+
+
+//////////////////////////////////////////////////////////
+function drawStriangle (height, character)
+{
+
+  let result = "";
+
+  for(let y = 0; y <= height; y++)
+  {
+ for(let x = 0; x < y; x++)
+ {
+  result = result + character;
+ }
+ result = result + '\n';
+  } 
+  return result;
+}
+///////////////////////////////////////////////////////
+
+
+function drawDiamond (height, character)
+{
+}
+
+console.log(drawSquare(5, '%'))
+
+console.log(drawStriangle(5, '$'))
